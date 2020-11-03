@@ -28,7 +28,7 @@ void setup()
 {
   // The buffer is memory mapped
   // You can directly draw on the display by writing to the buffer
-  uint16_t *buffer = (uint16_t *)malloc(LTDC_F746_ROKOTECH.width * LTDC_F746_ROKOTECH.height);
+  uint16_t *buffer = (uint16_t *)malloc(LTDC_F746_ROKOTECH.width * LTDC_F746_ROKOTECH.height * sizeof(uint16_t));
 
   tft.begin((uint16_t *)buffer);
   tft.fillScreen( LTDC_BLACK );
@@ -60,7 +60,7 @@ void waitForAutoTrigger()
   while ( ( adcValue > triggerLevel - hysteresis ) && !timeOutFlag )
   {
     adcValue = analogRead( ANALOG_SIGNAL_INPUT );
-    
+
     if ( millis() > timeOutLimit ) timeOutFlag = 1 ;
   }
 
@@ -101,7 +101,7 @@ void showSignal()
       // draw new line element
       tft.drawLine(oldx,               oldy, n,            y, LTDC_GREEN );
     }
-    
+
     oldSignal[n - 1] = oldy;
     oldx = n;
     oldy = y;
@@ -112,7 +112,7 @@ void loop(void)
 {
   int n;
   uint32_t nextTime=0;
-  
+
   waitForAutoTrigger();
 
   // record signal
@@ -121,8 +121,8 @@ void loop(void)
     adcBuffer[n] = analogRead( ANALOG_SIGNAL_INPUT );
 
     // wait for next sample
-    while(micros()<nextTime); 
-    nextTime=micros()+SAMPLING_TIME_US;   
+    while(micros()<nextTime);
+    nextTime=micros()+SAMPLING_TIME_US;
   }
 
   showSignal();

@@ -16,10 +16,10 @@ void setup()
 {
   // The buffer is memory mapped
   // You can directly draw on the display by writing to the buffer
-  uint16_t *buffer = (uint16_t *)malloc(LTDC_F746_ROKOTECH.width * LTDC_F746_ROKOTECH.height);
+  uint16_t *buffer = (uint16_t *)malloc(LTDC_F746_ROKOTECH.width * LTDC_F746_ROKOTECH.height * sizeof(uint16_t));
 
   tft.begin((uint16_t *)buffer);
-  
+
   tft.fillScreen(LTDC_BLACK);
   //tft.setRotation(0);
   tft.setCursor(0, 0);
@@ -34,11 +34,11 @@ TSPoint OldPoint;
 void loop()
 {
     TSPoint p = ts.getPoint();
-    
+
     if( OldPoint != p )
     {
       OldPoint=p;
-      
+
       tft.fillScreen( LTDC_BLACK );
 
       tft.setCursor(0, 0);

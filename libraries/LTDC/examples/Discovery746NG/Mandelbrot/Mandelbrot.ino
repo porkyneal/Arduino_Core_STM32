@@ -3,7 +3,7 @@
   STM32F746 mandelbrot calculation
 
   Addapted from a mix of different sources to display the mandelbrot set.
-  
+
   June 2017, ChrisMicro
 
 **************************************************************************/
@@ -18,11 +18,11 @@ RGB_Color=Wheel(colorNumber)
 converts a colorNumber on a color wheel from 0 to 255 into a RGB color.
 https://color.adobe.com/de/create/color-wheel/?base=2&rule=Analogous
 */
-uint16_t colorWheel( uint16_t WheelPos ) 
+uint16_t colorWheel( uint16_t WheelPos )
 {
   uint32_t r,g,b;
   WheelPos = 255 - WheelPos;
-  
+
   if (WheelPos < 85) {
     r = 255 - WheelPos * 3;
     g = 0;
@@ -41,7 +41,7 @@ uint16_t colorWheel( uint16_t WheelPos )
     b = 0;
   }
   uint16_t LTDC_color=tft.color565(r,g,b);
-  
+
   return LTDC_color;
 }
 
@@ -49,7 +49,7 @@ void setup()
 {
   // The buffer is memory mapped
   // You can directly draw on the display by writing to the buffer
-  uint16_t *buffer = (uint16_t *)malloc(LTDC_F746_ROKOTECH.width * LTDC_F746_ROKOTECH.height);
+  uint16_t *buffer = (uint16_t *)malloc(LTDC_F746_ROKOTECH.width * LTDC_F746_ROKOTECH.height * sizeof(uint16_t));
 
   tft.begin((uint16_t *)buffer);
   tft.fillScreen( LTDC_BLACK );
@@ -104,7 +104,7 @@ void loop()
       Zy = 0.0;
       Zx2 = Zx * Zx;
       Zy2 = Zy * Zy;
-      
+
       for (Iteration = 0; Iteration < IterationMax && ((Zx2 + Zy2) < ER2); Iteration++)
       {
         Zy = 2 * Zx * Zy + Cy;
@@ -116,7 +116,7 @@ void loop()
       uint16_t LTDC_color;
       if( Iteration>10) LTDC_color = colorWheel(Iteration+20);
       else LTDC_color = LTDC_BLACK;
-      
+
       tft.drawPixel(iX, iY, LTDC_color);
     }
   }
