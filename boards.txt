@@ -2999,19 +2999,64 @@ Midatronics.menu.rtlib.full.build.flags.ldspecs=
 ################################################################################
 # Frostechnic
 
-Frtostechnic.name= Frtostechnic
+Frostechnic.name= Frostechnic
 
-Frtostechnic.build.core=arduino
-Frtostechnic.build.board=FROST_767VI
-Frtostechnic.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
+Frostechnic.build.core=arduino
+Frostechnic.build.board=FROST_767VI
+Frostechnic.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
 
-Frtostechnic.menu.pnum.FROST_767VI=STMFROST_767VI_5MI
-Frtostechnic.menu.pnum.FROST_767VI.upload.maximum_size=2097152
-Frtostechnic.menu.pnum.FROST_767VI.upload.maximum_data_size=524288
-Frtostechnic.menu.pnum.FROST_767VI.build.mcu=cortex-m7
-Frtostechnic.menu.pnum.FROST_767VI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
-Frtostechnic.menu.pnum.FROST_767VI.build.board=FROST_767VI
-Frtostechnic.menu.pnum.FROST_767VI.build.series=STM32F7xx
-Frtostechnic.menu.pnum.FROST_767VI.build.product_line=STM32F767xx
-Frtostechnic.menu.pnum.FROST_767VI.build.variant=FROST_767VI
-Frtostechnic.menu.pnum.FROST_767VI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
+Frostechnic.menu.pnum.FROST_767VI=STMFROST_767VI_5MI
+Frostechnic.menu.pnum.FROST_767VI.upload.maximum_size=2097152
+Frostechnic.menu.pnum.FROST_767VI.upload.maximum_data_size=524288
+Frostechnic.menu.pnum.FROST_767VI.build.mcu=cortex-m7
+Frostechnic.menu.pnum.FROST_767VI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Frostechnic.menu.pnum.FROST_767VI.build.board=FROST_767VI
+Frostechnic.menu.pnum.FROST_767VI.build.series=STM32F7xx
+Frostechnic.menu.pnum.FROST_767VI.build.product_line=STM32F767xx
+Frostechnic.menu.pnum.FROST_767VI.build.variant=FROST_767VI
+Frostechnic.menu.pnum.FROST_767VI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
+
+# USB connectivity
+Frostechnic.menu.usb.none=None
+Frostechnic.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
+Frostechnic.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+Frostechnic.menu.usb.CDC=CDC (no generic 'Serial')
+Frostechnic.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
+Frostechnic.menu.usb.HID=HID (keyboard and mouse)
+Frostechnic.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
+Frostechnic.menu.xusb.FS=Low/Full Speed
+Frostechnic.menu.xusb.HS=High Speed
+Frostechnic.menu.xusb.HS.build.usb_speed=-DUSE_USB_HS
+Frostechnic.menu.xusb.HSFS=High Speed in Full Speed mode
+Frostechnic.menu.xusb.HSFS.build.usb_speed=-DUSE_USB_HS -DUSE_USB_HS_IN_FS
+
+# Optimizations
+Frostechnic.menu.opt.osstd=Smallest (-Os default)
+Frostechnic.menu.opt.oslto=Smallest (-Os) with LTO
+Frostechnic.menu.opt.oslto.build.flags.optimize=-Os -flto
+Frostechnic.menu.opt.o1std=Fast (-O1)
+Frostechnic.menu.opt.o1std.build.flags.optimize=-O1
+Frostechnic.menu.opt.o1lto=Fast (-O1) with LTO
+Frostechnic.menu.opt.o1lto.build.flags.optimize=-O1 -flto
+Frostechnic.menu.opt.o2std=Faster (-O2)
+Frostechnic.menu.opt.o2std.build.flags.optimize=-O2
+Frostechnic.menu.opt.o2lto=Faster (-O2) with LTO
+Frostechnic.menu.opt.o2lto.build.flags.optimize=-O2 -flto
+Frostechnic.menu.opt.o3std=Fastest (-O3)
+Frostechnic.menu.opt.o3std.build.flags.optimize=-O3
+Frostechnic.menu.opt.o3lto=Fastest (-O3) with LTO
+Frostechnic.menu.opt.o3lto.build.flags.optimize=-O3 -flto
+Frostechnic.menu.opt.ogstd=Debug (-g)
+Frostechnic.menu.opt.ogstd.build.flags.optimize=-g -Og
+
+# C Runtime Library
+Frostechnic.menu.rtlib.nano=Newlib Nano (default)
+Frostechnic.menu.rtlib.nanofp=Newlib Nano + Float Printf
+Frostechnic.menu.rtlib.nanofp.build.flags.ldspecs=--specs=nano.specs -u _printf_float
+Frostechnic.menu.rtlib.nanofs=Newlib Nano + Float Scanf
+Frostechnic.menu.rtlib.nanofs.build.flags.ldspecs=--specs=nano.specs -u _scanf_float
+Frostechnic.menu.rtlib.nanofps=Newlib Nano + Float Printf/Scanf
+Frostechnic.menu.rtlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
+Frostechnic.menu.rtlib.full=Newlib Standard
+Frostechnic.menu.rtlib.full.build.flags.ldspecs=
+
