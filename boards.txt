@@ -2995,3 +2995,23 @@ Midatronics.menu.rtlib.nanofps=Newlib Nano + Float Printf/Scanf
 Midatronics.menu.rtlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
 Midatronics.menu.rtlib.full=Newlib Standard
 Midatronics.menu.rtlib.full.build.flags.ldspecs=
+
+################################################################################
+# Frostechnic
+
+Frtostechnic.name= Frtostechnic
+
+Frtostechnic.build.core=arduino
+Frtostechnic.build.board=FROST_767VI
+Frtostechnic.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
+
+Frtostechnic.menu.pnum.FROST_767VI=STMFROST_767VI_5MI
+Frtostechnic.menu.pnum.FROST_767VI.upload.maximum_size=2097152
+Frtostechnic.menu.pnum.FROST_767VI.upload.maximum_data_size=524288
+Frtostechnic.menu.pnum.FROST_767VI.build.mcu=cortex-m7
+Frtostechnic.menu.pnum.FROST_767VI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Frtostechnic.menu.pnum.FROST_767VI.build.board=FROST_767VI
+Frtostechnic.menu.pnum.FROST_767VI.build.series=STM32F7xx
+Frtostechnic.menu.pnum.FROST_767VI.build.product_line=STM32F767xx
+Frtostechnic.menu.pnum.FROST_767VI.build.variant=FROST_767VI
+Frtostechnic.menu.pnum.FROST_767VI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
