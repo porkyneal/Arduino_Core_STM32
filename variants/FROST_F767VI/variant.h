@@ -18,114 +18,91 @@
 extern "C" {
 #endif // __cplusplus
 
-/*----------------------------------------------------------------------------
- *        Pins
- *----------------------------------------------------------------------------*/
-// USART
-#define PA10 0  // RX
-#define PA9  1  // TX
+#define PA0  A0 // Digital pin 0
+#define PA1  A1 // Digital pin 1
+#define PA2  A2 // Digital pin 2
+#define PA3  A3 // Digital pin 3
+#define PA4  A4 // Digital pin 4
+#define PA5  A5 // Digital pin 5
+#define PA6  A6 // Digital pin 6
+#define PA7  A7 // Digital pin 7
+#define PA8  8 // Digital pin 8
+#define PA9  9 // Digital pin 9
+#define PA10 10 // Digital pin 10
+#define PA11 11 // Digital pin 11
+#define PA12 12 // Digital pin 12
+#define PA13 13 // Digital pin 13
+#define PA14 14 // Digital pin 14
+#define PA15 15 // Digital pin 15 
+#define PB0  A8 // Digital pin 16
+#define PB1  A9 // Digital pin 17
+#define PB2  18 // Digital pin 18
+#define PB3  19 // Digital pin 19
+#define PB4  20 // Digital pin 20
+#define PB5  21 // Digital pin 21
+#define PB6  22 // Digital pin 22
+#define PB7  23 // Digital pin 23
+#define PB8  24 // Digital pin 24
+#define PB9  25 // Digital pin 25
+#define PB10 26 // Digital pin 26
+#define PB12 27 // Digital pin 27
+#define PB13 28 // Digital pin 28
+#define PB14 29 // Digital pin 29
+#define PB15 30 // Digital pin 30
+#define PC0  A10 // Digital pin 31
+#define PC1  A11 // Digital pin 32
+#define PC2  A12 // Digital pin 33
+#define PC3  A13 // Digital pin 34
+#define PC4  A14 // Digital pin 35
+#define PC5  A15 // Digital pin 36
+#define PC6  37 // Digital pin 37
+#define PC7  38 // Digital pin 38
+#define PC8  39 // Digital pin 39
+#define PC9  40 // Digital pin 40
+#define PC10 41 // Digital pin 41
+#define PC11 42 // Digital pin 42
+#define PC12 43 // Digital pin 43
+#define PC13 44 // Digital pin 44
+#define PC14 45 // Digital pin 45
+#define PC15 46 // Digital pin 46 
+#define PD0  47 // Digital pin 47
+#define PD1  48 // Digital pin 48
+#define PD2  49 // Digital pin 49
+#define PD3  50 // Digital pin 50
+#define PD4  51 // Digital pin 51
+#define PD5  52 // Digital pin 52
+#define PD6  53 // Digital pin 53
+#define PD7  54 // Digital pin 54
+#define PD8  55 // Digital pin 55
+#define PD9  56 // Digital pin 56
+#define PD10 57 // Digital pin 57
+#define PD11 58 // Digital pin 58
+#define PD12 59 // Digital pin 59
+#define PD13 60 // Digital pin 60
+#define PD14 61 // Digital pin 61
+#define PD15 62 // Digital pin 62
+#define PE0  63 // Digital pin 63
+#define PE1  64 // Digital pin 64
+#define PE2  65 // Digital pin 65
+#define PE3  66 // Digital pin 66
+#define PE4  67 // Digital pin 67
+#define PE5  68 // Digital pin 68
+#define PE6  69 // Digital pin 69
+#define PE7  70 // Digital pin 70
+#define PE8  71 // Digital pin 71
+#define PE9  72 // Digital pin 72
+#define PE10 73 // Digital pin 73
+#define PE11 74 // Digital pin 74
+#define PE12 75 // Digital pin 75
+#define PE13 76 // Digital pin 76
+#define PE14 77 // Digital pin 77
+#define PE15 78 // Digital pin 78#define 
+#define PH0  79 // Digital pin 79, used by the external oscillator
+#define PH1  80 // Digital pin 80, used by the external oscillator
 
-// SWD
-#define PA14 2  // SWCLK
-#define PA13 3  // SWDIO
-
-// EXT3
-#define PE5  4  // EXT_D1
-#define PE4  5  // EXT_D2
-#define PE3  6  // EXT_D3
-#define PE2  7  // EXT_D4
-#define PE1  8  // EXT_D5
-
-// SPI
-#define PB2  9  // SS_SDLCD
-#define PC4  10 // SS_E
-#define PA7  11 // MOSI
-#define PA6  12 // MISO
-#define PA5  13 // SCK
-#define PB1  14 // SS_X
-#define PB0  15 // SS_Y
-#define PC5  16 // SS_Z
-
-// I2C
-#define PB6  17 // SCL
-#define PB7  18 // SDA
-
-// USB
-#define PA12 19 // DD+
-#define PA11 20 // DD//
-
-// LED
-#define PD0  21 // STATUS_LED
-
-// PWM
-// TIM2
-#define PA15 22 // X_STEP
-#define PB3  23 // Y_STEP
-#define PB10 24 // Z_STEP
-#define PB11 25 // E_STEP
-// TIM3
-#define PB5  26 // PWM_EXT1
-#define PB4  27 // PWM_EXT2
-#define PC8  28 // PWM_EXT3
-#define PC9  29 // PWM_EXT4
-// TIM5
-#define PA0  30 // PWM_FAN1
-#define PA1  31 // PWM_BED
-#define PA2  32 // PWM_FAN2
-#define PA3  33 // PWM_HEAT
-
-// Stepper
-#define PC12 34 // X_EN
-#define PC10 35 // X_DIR
-#define PC11 36 // X_DIAG
-#define PD4  37 // Y_EN
-#define PD6  38 // Y_DIR
-#define PD5  39 // Y_DIAG
-#define PE15 40 // Z_EN
-#define PE13 41 // Z_DIR
-#define PE14 42 // Z_DIAG
-#define PE11 43 // E_EN
-#define PE10 44 // E_DIR
-#define PE12 45 // E_DIAG
-
-// EXT3
-#define PC6  46 // LCD_BEEPER
-#define PC7  47 // BTN_ENC
-#define PD14 48 // LCD_EN
-#define PD15 49 // LCD_RS
-#define PD13 50 // LCD_D4
-#define PD12 51 // LCD_D5
-#define PD11 52 // LCD_D6
-#define PD10 53 // LCD_D7
-
-// EXT2
-#define PC14 54 // BTN_EN1
-#define PC15 55 // BTN_EN2
-#define PC13 56 // SD_CARD_DET
-
-// SD Card Reader
-#define PE7  57 // SS_SD
-
-// Endstops
-#define PB12 58 // X_MIN
-#define PB13 59 // X_MAX
-#define PB14 60 // Y_MIN
-#define PB15 61 // Y_MAX
-#define PD8  62 // Z_MIN
-#define PD9  63 // Z_MAX
-
-// ADC
-#define PC0  64 // THERM_1
-#define PC1  65 // THERM_2
-#define PC2  66 // THERM_3
-#define PA4  67 // FAN_SPEED1
-#define PC3  68 // FAN_SPEED2
-#define PE6  69
-
-// PIN definition
-#define NUM_DIGITAL_PINS 70
-#define NUM_ANALOG_INPUTS 5
-#define NUM_ANALOG_FIRST 64
+// This must be a literal
+#define NUM_DIGITAL_PINS 80
+#define NUM_ANALOG_INPUTS 16
 
 // Below SPI and I2C definitions already done in the core
 // Could be redefined here if differs from the default one
@@ -146,45 +123,24 @@ extern "C" {
 
 // UART Definitions
 // Define here Serial instance number to map on Serial generic name
-#define SERIAL_UART_INSTANCE    1 //ex: 2 for Serial2 (USART2)
-// DEBUG_UART could be redefined to print on another instance than 'Serial'
-//#define DEBUG_UART              ((USART_TypeDef *) U(S)ARTX) // ex: USART3
-// DEBUG_UART baudrate, default: 9600 if not defined
-//#define DEBUG_UART_BAUDRATE     x
-// DEBUG_UART Tx pin name, default: the first one found in PinMap_UART_TX for DEBUG_UART
-//#define DEBUG_PINNAME_TX        PX_n // PinName used for TX
+#define SERIAL_UART_INSTANCE    2 //ex: 2 for Serial2 (USART2)
 
 // Default pin used for 'Serial' instance (ex: ST-Link)
 // Mandatory for Firmata
 #define PIN_SERIAL_RX           PA10
 #define PIN_SERIAL_TX           PA9
 
-// Optional PIN_SERIALn_RX and PIN_SERIALn_TX where 'n' is the U(S)ART number
-// Used when user instanciate a hardware Serial using its peripheral name.
-// Example: HardwareSerial mySerial(USART3);
-// will use PIN_SERIAL3_RX and PIN_SERIAL3_TX if defined.
-//#define PIN_SERIALn_RX          x // For U(S)ARTn RX
-//#define PIN_SERIALn_TX          x // For U(S)ARTn TX
-//#define PIN_SERIALLP1_RX        x // For LPUART1 RX
-//#define PIN_SERIALLP1_TX        x // For LPUART1 TX
+
 
 // SD card slot Definitions
 // SD detect signal can be defined if required
 #define SD_DETECT_PIN           PD9
 
-
-/* HAL configuration */
-#define HSE_VALUE               25000000U
-
-// Last Flash sector used for EEPROM emulation, address/sector depends on single/dual bank configuration.
-// By default 2MB single bank
-#define FLASH_BASE_ADDRESS  0x081C0000
-#define FLASH_DATA_SECTOR   11
 // USB Vbus sensing. Require to have Vbus pin connected to Vbus signal.
 // Warning, pin is different depending on FullSpeed or High Speed mode used
 // See AN4879 https://www.st.com/content/st_com/en/search.html#q=AN4879-t=resources-page=1
 //#define USBD_VBUS_DETECTION_ENABLE
-#define USBD_FIXED_PULLUP
+// #define USBD_FIXED_PULLUP
 
 // #define HAL_SD_MODULE_ENABLED
 #define HAL_LTDC_MODULE_ENABLED

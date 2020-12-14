@@ -21,109 +21,113 @@ extern "C" {
 // This array allows to wrap Arduino pin number(Dx or x)
 // to STM32 PinName (PX_n)
 const PinName digitalPin[] = {
-   // USART
-  PA_10, // D0 - RX
-  PA_9,  // D1 - TX
+  PA_0,  // Digital pin 0
+  PA_1,  // Digital pin 1
+  PA_2,  // Digital pin 2
+  PA_3,  // Digital pin 3
+  PA_4,  // Digital pin 4
+  PA_5,  // Digital pin 5
+  PA_6,  // Digital pin 6
+  PA_7,  // Digital pin 7
+  PA_8,  // Digital pin 8
+  PA_9,  // Digital pin 9
+  PA_10, // Digital pin 10
+  PA_11, // Digital pin 11
+  PA_12, // Digital pin 12
+  PA_13, // Digital pin 13
+  PA_14, // Digital pin 14
+  PA_15, // Digital pin 15
 
-  // SWD
-  PA_14, // D2 - SWCLK
-  PA_13, // D3 - SWDIO
+  PB_0,  // Digital pin 16
+  PB_1,  // Digital pin 17
+  PB_2,  // Digital pin 18
+  PB_3,  // Digital pin 19
+  PB_4,  // Digital pin 20
+  PB_5,  // Digital pin 21
+  PB_6,  // Digital pin 22
+  PB_7,  // Digital pin 23
+  PB_8,  // Digital pin 24
+  PB_9,  // Digital pin 25
+  PB_10, // Digital pin 26
+  PB_12, // Digital pin 27
+  PB_13, // Digital pin 28
+  PB_14, // Digital pin 29
+  PB_15, // Digital pin 30
 
-  // EXT3
-  PE_5, // D4 - EXT_D1
-  PE_4, // D5 - EXT_D2
-  PE_3, // D6 - EXT_D3
-  PE_2, // D7 - EXT_D4
-  PE_1, // D8 - EXT_D5
+  PC_0,  // Digital pin 31
+  PC_1,  // Digital pin 32
+  PC_2,  // Digital pin 33
+  PC_3,  // Digital pin 34
+  PC_4,  // Digital pin 35
+  PC_5,  // Digital pin 36
+  PC_6,  // Digital pin 37
+  PC_7,  // Digital pin 38
+  PC_8,  // Digital pin 39
+  PC_9,  // Digital pin 40
+  PC_10, // Digital pin 41
+  PC_11, // Digital pin 42
+  PC_12, // Digital pin 43
+  PC_13, // Digital pin 44
+  PC_14, // Digital pin 45
+  PC_15, // Digital pin 46
 
-  // SPI
-  PB_2, // D9 - SS_SDLCD
-  PC_4, // D10 - SS_E
-  PA_7, // D11 - MOSI
-  PA_6, // D12 - MISO
-  PA_5, // D13 - SCK
-  PB_1, // D14 - SS_X
-  PB_0, // D15 - SS_Y
-  PC_5, // D16 - SS_Z
+  PD_0,  // Digital pin 47
+  PD_1,  // Digital pin 48
+  PD_2,  // Digital pin 49
+  PD_3,  // Digital pin 50
+  PD_4,  // Digital pin 51
+  PD_5,  // Digital pin 52
+  PD_6,  // Digital pin 53
+  PD_7,  // Digital pin 54
+  PD_8,  // Digital pin 55
+  PD_9,  // Digital pin 56
+  PD_10, // Digital pin 57
+  PD_11, // Digital pin 58
+  PD_12, // Digital pin 59
+  PD_13, // Digital pin 60
+  PD_14, // Digital pin 61
+  PD_15, // Digital pin 62
 
-  // I2C
-  PB_6, // D17 - SCL
-  PB_7, // D18 - SDA
+  PE_0,  // Digital pin 63
+  PE_1,  // Digital pin 64
+  PE_2,  // Digital pin 65
+  PE_3,  // Digital pin 66
+  PE_4,  // Digital pin 67
+  PE_5,  // Digital pin 68
+  PE_6,  // Digital pin 69
+  PE_7,  // Digital pin 70
+  PE_8,  // Digital pin 71
+  PE_9,  // Digital pin 72
+  PE_10, // Digital pin 73
+  PE_11, // Digital pin 74
+  PE_12, // Digital pin 75
+  PE_13, // Digital pin 76
+  PE_14, // Digital pin 77
+  PE_15, // Digital pin 78
 
-  // USB
-  PA_12, // D19 - DD+
-  PA_11, // D20 - DD-
-
-  // LED
-  PD_0, // D21 - STATUS_LED
-
-  // PWM
-  // TIM2
-  PA_15, // D22 - X_STEP
-  PB_3,  // D23 - Y_STEP
-  PB_10, // D24 - Z_STEP
-  PB_11, // D25 - E_STEP
-  // TIM3
-  PB_5, // D26 - PWM_EXT1
-  PB_4, // D27 - PWM_EXT2
-  PC_8, // D28 - PWM_EXT3
-  PC_9, // D29 - PWM_EXT4
-  // TIM5
-  PA_0, // D30 - PWM_FAN1
-  PA_1, // D31 - PWM_BED
-  PA_2, // D32 - PWM_FAN2
-  PA_3, // D33 - PWM_HEAT
-
-  // Stepper
-  PC_12, // D34 - X_EN
-  PC_10, // D35 - X_DIR
-  PC_11, // D36 - X_DIAG
-  PD_4,  // D37 - Y_EN
-  PD_6,  // D38 - Y_DIR
-  PD_5,  // D39 - Y_DIAG
-  PE_15, // D40 - Z_EN
-  PE_13, // D41 - Z_DIR
-  PE_14, // D42 - Z_DIAG
-  PE_11, // D43 - E_EN
-  PE_10, // D44 - E_DIR
-  PE_12, // D45 - E_DIAG
-
-  // EXT3
-  PC_6,  // D46 - LCD_BEEPER
-  PC_7,  // D47 - BTN_ENC
-  PD_14, // D48 - LCD_EN
-  PD_15, // D49 - LCD_RS
-  PD_13, // D50 - LCD_D4
-  PD_12, // D51 - LCD_D5
-  PD_11, // D52 - LCD_D6
-  PD_10, // D53 - LCD_D7
-
-  // EXT2
-  PC_14, // D54 - BTN_EN1
-  PC_15, // D55 - BTN_EN2
-  PC_13, // D56 - SD_CARD_DET
-
-  // SD Card Reader
-  PE_7,  // D57 - SS_SD
-
-  // Endstops
-  PB_12, // D58 - X_MIN
-  PB_13, // D59 - X_MAX
-  PB_14, // D60 - Y_MIN
-  PB_15, // D61 - Y_MAX
-  PD_8,  // D62 - Z_MIN
-  PD_9,  // D63 - Z_MAX
-
-  // ADC
-  PC_0, // D64 - THERM_1
-  PC_1, // D65 - THERM_2
-  PC_2, // D66 - THERM_3
-  PA_4, // D67 - FAN_SPEED1
-  PC_3,  // D68 - FAN_SPEED2
-
-  PE_6  // D68 - FAN_SPEED2
+  PH_0,  // Digital pin 79, used by the external oscillator
+  PH_1   // Digital pin 80, used by the external oscillator
 };
 
+// Analog (Ax) pin number array
+const uint32_t analogInputPin[] = {
+  0,  // A0,  PA0
+  1,  // A1,  PA1
+  2,  // A2,  PA2
+  3,  // A3,  PA3
+  4,  // A4,  PA4
+  5,  // A5,  PA5
+  6,  // A6,  PA6
+  7,  // A7,  PA7
+  16, // A8,  PB0
+  17, // A9,  PB1
+  31, // A10, PC0
+  32, // A11, PC1
+  33, // A12, PC2
+  34, // A13, PC3
+  35, // A14, PC4
+  36  // A15, PC5
+};
 
 #ifdef __cplusplus
 }
@@ -142,53 +146,69 @@ extern "C" {
   */
 WEAK void SystemClock_Config(void)
 {
-  RCC_OscInitTypeDef RCC_OscInitStruct;
-  RCC_ClkInitTypeDef RCC_ClkInitStruct;
-  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct;
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
 
-  /**Configure the main internal regulator output voltage */
+  /** Configure LSE Drive Capability
+  */
+  HAL_PWR_EnableBkUpAccess();
+  /** Configure the main internal regulator output voltage
+  */
   __HAL_RCC_PWR_CLK_ENABLE();
-
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-
-  /**Initializes the CPU, AHB and APB busses clocks */
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 12;
-  RCC_OscInitStruct.PLL.PLLN = 216;
+  RCC_OscInitStruct.PLL.PLLM = 25;
+  RCC_OscInitStruct.PLL.PLLN = 432;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 9;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
-    _Error_Handler(__FILE__, __LINE__);
+  RCC_OscInitStruct.PLL.PLLQ = 2;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Activate the Over-Drive mode
+  */
+  if (HAL_PWREx_EnableOverDrive() != HAL_OK)
+  {
+    Error_Handler();
   }
 
-  /**Activate the Over-Drive mode */
-  if (HAL_PWREx_EnableOverDrive() != HAL_OK) {
-    _Error_Handler(__FILE__, __LINE__);
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LTDC|RCC_PERIPHCLK_CLK48;
+  PeriphClkInitStruct.PLLSAI.PLLSAIN = 384;
+  PeriphClkInitStruct.PLLSAI.PLLSAIR = 2;
+  PeriphClkInitStruct.PLLSAI.PLLSAIQ = 2;
+  PeriphClkInitStruct.PLLSAI.PLLSAIP = RCC_PLLSAIP_DIV8;
+  PeriphClkInitStruct.PLLSAIDivQ = 1;
+  PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_8;
+  PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLLSAIP;
+
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+  {
+    Error_Handler();
   }
 
-  /**Initializes the CPU, AHB and APB busses clocks */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1; //216 MHz
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4; //54 MHz
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2; //108 MHz
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7) != HAL_OK) {
-    _Error_Handler(__FILE__, __LINE__);
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7) != HAL_OK)
+  {
+    Error_Handler();
   }
 
-  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART1 | RCC_PERIPHCLK_I2C1 | RCC_PERIPHCLK_CLK48;
-  PeriphClkInitStruct.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
-  PeriphClkInitStruct.I2c1ClockSelection = RCC_I2C1CLKSOURCE_PCLK1;
-  PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLL;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK) {
-    _Error_Handler(__FILE__, __LINE__);
-  }
-
-  /**Enables the Clock Security System */
+  /** Enables the Clock Security System
+  */
   HAL_RCC_EnableCSS();
 }
 
