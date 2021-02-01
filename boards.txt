@@ -3016,6 +3016,17 @@ Frostechnic.menu.pnum.FROST_767VI.build.product_line=STM32F767xx
 Frostechnic.menu.pnum.FROST_767VI.build.variant=FROST_767VI
 Frostechnic.menu.pnum.FROST_767VI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
 
+Frostechnic.menu.pnum.FROST_767ZI=STMFROST_767ZI_5MI
+Frostechnic.menu.pnum.FROST_767ZI.upload.maximum_size=2097152
+Frostechnic.menu.pnum.FROST_767ZI.upload.maximum_data_size=524288
+Frostechnic.menu.pnum.FROST_767ZI.build.mcu=cortex-m7
+Frostechnic.menu.pnum.FROST_767ZI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Frostechnic.menu.pnum.FROST_767ZI.build.board=FROST_767ZI
+Frostechnic.menu.pnum.FROST_767ZI.build.series=STM32F7xx
+Frostechnic.menu.pnum.FROST_767ZI.build.product_line=STM32F767xx
+Frostechnic.menu.pnum.FROST_767ZI.build.variant=FROST_767ZI
+Frostechnic.menu.pnum.FROST_767ZI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
+
 # USB connectivity
 Frostechnic.menu.usb.none=None
 Frostechnic.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
